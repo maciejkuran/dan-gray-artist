@@ -1,0 +1,30 @@
+.first-section {
+  margin: 5rem 0;
+  max-width: 130rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.first-section div {
+  max-width: 55rem;
+  width: 100%;
+}
+
+.first-section img {
+  max-width: 55rem;
+  width: 100%;
+  border-radius: 5px;
+}
+
+@media (max-width: 1120px) {
+  .first-section {
+    justify-content: center;
+  }
+
+  .first-section p {
+    margin-bottom: 2rem;
+  }
+}

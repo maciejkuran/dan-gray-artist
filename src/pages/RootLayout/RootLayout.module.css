@@ -1,3 +1,7 @@
 .root-main {
-  margin: 5rem 1rem;
+  margin: 12rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

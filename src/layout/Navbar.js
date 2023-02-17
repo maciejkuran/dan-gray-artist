@@ -5,11 +5,13 @@ import classes from './Navbar.module.css';
 import CloseButton from '../components/UI/Buttons/CloseButton';
 
 import { NavLink, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const Navbar = () => {
   const [mobileNavIsActive, setMobileNavIsActive] = useState(false);
+  const [showNavOnScroll, setShowNavOnScroll] = useState(true);
 
+  //Mobile nav
   const showMobileNavHandler = () => {
     setMobileNavIsActive(true);
   };
@@ -21,9 +23,34 @@ const Navbar = () => {
   const navMobileClassName = mobileNavIsActive
     ? classes['nav__items--active']
     : classes['nav__items--inactive'];
+  //________________________________
+
+  //Hiding and showing nav when scroll up
+  useEffect(() => {
+    let prevScrollPosition = 0;
+    let curScrollPosition = 0;
+
+    window.addEventListener('scroll', () => {
+      curScrollPosition = window.pageYOffset;
+
+      //preventing bounce effect on mobile
+      if (curScrollPosition < 20) {
+        setShowNavOnScroll(true);
+      }
+
+      if (curScrollPosition > prevScrollPosition) {
+        setShowNavOnScroll(false);
+      } else {
+        setShowNavOnScroll(true);
+      }
+      prevScrollPosition = curScrollPosition;
+    });
+  }, []);
+
+  const navClassName = showNavOnScroll ? classes['nav--active'] : '';
 
   return (
-    <nav className={classes.nav}>
+    <nav className={`${classes.nav} ${navClassName}`}>
       <div className={classes['nav__wrapper']}>
         <Link to="/">
           <h4>DAN GRAY</h4>

@@ -47,6 +47,11 @@ h4 {
   font-weight: 500;
 }
 
+p {
+  line-height: 30px;
+  margin-bottom: 1rem;
+}
+
 p,
 a {
   font-size: 1.8rem;
@@ -56,6 +61,10 @@ a {
 a {
   color: black;
   text-decoration: underline;
+}
+
+a:hover {
+  color: rgb(92, 92, 92);
 }
 
 li {

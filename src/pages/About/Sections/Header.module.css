@@ -1,0 +1,37 @@
+.header {
+  max-width: 110rem;
+  width: 100%;
+}
+
+.header__quote {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  border-radius: 5px;
+  box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.15);
+}
+
+.header__quote--text {
+  font-weight: 500;
+}
+
+.header__quote div {
+  max-width: 68rem;
+  width: 100%;
+}
+
+.header__quote__author {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header__quote__author p {
+  color: var(--grey);
+  margin-top: 1rem;
+}
+
+.header__quote__author span {
+  margin-right: 0.5rem;
+}

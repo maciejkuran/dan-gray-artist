@@ -1,0 +1,12 @@
+.h1-header {
+  display: flex;
+  align-items: center;
+}
+
+.h1-header div {
+  max-width: 8.6rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--grey);
+  margin-right: 0.5rem;
+}
