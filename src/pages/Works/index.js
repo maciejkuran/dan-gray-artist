@@ -6,7 +6,7 @@ const Works = () => {
   return (
     <section>
       <H1Header title="WORKS" />
-      <div className={classes['works__grid']}>
+      <div className={`${classes['works__grid']} default-animation`}>
         <SingleItem />
         <SingleItem />
         <SingleItem />

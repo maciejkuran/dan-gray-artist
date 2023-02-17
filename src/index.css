@@ -91,3 +91,19 @@ li {
 ::-webkit-scrollbar-corner {
   background-color: transparent;
 }
+
+.default-animation {
+  animation: 1s slideTop;
+}
+
+@keyframes slideTop {
+  from {
+    opacity: 0.5;
+    transform: translateY(30rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Work = () => {
   return (
-    <section className={classes.work}>
+    <section className={`${classes.work} default-animation`}>
       <Link to=".." relative="path">
         <button>
           <FontAwesomeIcon icon={faArrowLeftLong} />
