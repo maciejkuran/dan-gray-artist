@@ -3,6 +3,11 @@
   align-items: center;
 }
 
+.h1-header h1 {
+  font-size: 2rem;
+  color: var(--grey);
+}
+
 .h1-header div {
   max-width: 8.6rem;
   width: 100%;

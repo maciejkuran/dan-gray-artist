@@ -5,7 +5,7 @@ import classes from './Navbar.module.css';
 import CloseButton from '../components/UI/Buttons/CloseButton';
 
 import { NavLink, Link } from 'react-router-dom';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [mobileNavIsActive, setMobileNavIsActive] = useState(false);
@@ -40,6 +40,7 @@ const Navbar = () => {
 
       if (curScrollPosition > prevScrollPosition) {
         setShowNavOnScroll(false);
+        setMobileNavIsActive(false);
       } else {
         setShowNavOnScroll(true);
       }
@@ -68,6 +69,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive }) => (isActive ? classes.active : classes.inactive)}
               to="works"
+              end
             >
               WORKS
             </NavLink>

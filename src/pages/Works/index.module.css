@@ -1,0 +1,28 @@
+.works__grid {
+  max-width: 95vw;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33rem, 1fr));
+  gap: 5rem;
+  overflow: hidden;
+  padding: 3rem 0;
+  animation: 1s slideTop;
+}
+
+@keyframes slideTop {
+  from {
+    opacity: 0.5;
+    transform: translateY(30rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 758px) {
+  .works__grid {
+    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  }
+}
