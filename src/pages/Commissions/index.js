@@ -1,13 +1,15 @@
 import classes from './index.module.css';
 import H1Header from '../../components/UI/H1Header';
 import Contact from '../../components/UI/Contact';
-import imgPlaceholder from '../../assets/imgs/dog.jpg';
 import { API_URL } from '../../config/firebase';
 import { json, useLoaderData } from 'react-router-dom';
 
 const Commissions = () => {
   const data = useLoaderData();
-  console.log(data);
+  const imgs = [];
+  for (const key in data) {
+    imgs.push(data[key].img);
+  }
 
   return (
     <section className={classes['commissions']}>
@@ -19,21 +21,11 @@ const Commissions = () => {
         </p>
         <Contact title='Contact' />
         <div className={classes['commissions__grid']}>
-          <div>
-            <img src={imgPlaceholder}></img>
-          </div>
-          <div>
-            <img src={imgPlaceholder}></img>
-          </div>
-          <div>
-            <img src={imgPlaceholder}></img>
-          </div>
-          <div>
-            <img src={imgPlaceholder}></img>
-          </div>
-          <div>
-            <img src={imgPlaceholder}></img>
-          </div>
+          {imgs.map(url => (
+            <div key={url}>
+              <img src={url}></img>
+            </div>
+          ))}
         </div>
       </div>
     </section>
