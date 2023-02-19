@@ -18,8 +18,10 @@
 }
 
 .single-item img {
+  object-fit: contain;
   max-width: 100%;
-  height: auto;
+  max-height: 30rem;
+  height: 100%;
 }
 .single-item h4 {
   margin-top: 1rem;
