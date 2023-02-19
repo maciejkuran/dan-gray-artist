@@ -1,23 +1,28 @@
 import classes from './SingleItem.module.css';
-import img from '../../assets/imgs/home-2.jpg';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
-const SingleItem = () => {
+const SingleItem = ({ work }) => {
   return (
-    <div className={classes['single-item']}>
-      <img src={img} alt="title"></img>
-
-      <div>
-        <h4>The golden hour, 2017</h4>
-        <p>acrylic on canvas, 30X40</p>
+    <Link to={work.id}>
+      <div className={classes['single-item']}>
+        <img src={work.img} alt={work.title}></img>
+        <div>
+          <h4>
+            {work.title}
+            {work.year !== 'undefined' ? `, ${work.year}` : ''}
+          </h4>
+          <p>
+            {work.type}, {work.size}
+          </p>
+        </div>
+        <button>
+          view <FontAwesomeIcon icon={faArrowRightLong} />
+        </button>
       </div>
-
-      <button>
-        view <FontAwesomeIcon icon={faArrowRightLong} />
-      </button>
-    </div>
+    </Link>
   );
 };
 
