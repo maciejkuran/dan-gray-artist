@@ -79,11 +79,11 @@
   }
 
   .nav__items--inactive {
-    transform: translateY(-400px);
+    transform: translateY(-50rem);
   }
 
   .nav__items--active {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 
   .close-btn {

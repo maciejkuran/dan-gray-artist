@@ -4,7 +4,7 @@ import Contact from '../../components/UI/Contact';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import { Link, json, useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { API_URL } from '../../config/firebase';
 
 const Work = () => {
@@ -23,7 +23,7 @@ const Work = () => {
         {work.year !== 'undefined' ? `, ${work.year}` : ''}
       </h1>
       <p>
-        {work.type}, {work.size}
+        {work.type} {work.size !== 'undefined' ? work.size + '″' : ''}
       </p>
       <span className={classes['work__id']}>ID: {work.id}</span>
       <Contact title='Ask for availability and price' />
@@ -48,12 +48,20 @@ export const loader = async ({ request, params }) => {
   const res = await fetch(`${API_URL}/works/${id}.json`);
 
   if (!res.ok)
-    return json(
-      { message: 'Could not fetch data. Please try again!' },
-      { status: 500 }
+    throw new Response(
+      JSON.stringify({ message: 'Problem occured while fetching data.' }),
+      {
+        status: 500,
+      }
     );
 
   const data = await res.json();
+
+  if (data === null)
+    throw new Response(
+      JSON.stringify({ message: 'Bad request! No data found.' }),
+      { status: 400 }
+    );
 
   return { ...data, id: id };
 };

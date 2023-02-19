@@ -2,7 +2,7 @@ import classes from './index.module.css';
 import SingleItem from './SingleItem';
 import H1Header from '../../components/UI/H1Header';
 import { API_URL } from '../../config/firebase';
-import { json, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const Works = () => {
   const data = useLoaderData();
@@ -37,9 +37,11 @@ export const loader = async () => {
   const res = await fetch(`${API_URL}/works.json`);
 
   if (!res.ok)
-    return json(
-      { message: 'Could not fetch data. Please try again.' },
-      { status: 500 }
+    throw new Response(
+      JSON.stringify({ message: 'Problem occured while fetching data.' }),
+      {
+        status: 500,
+      }
     );
 
   return res;

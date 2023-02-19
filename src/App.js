@@ -5,6 +5,7 @@ import Work from './pages/Work/index';
 import Commissions from './pages/Commissions/index';
 import RootLayout from './pages/RootLayout/RootLayout';
 import ScrollToTop from './components/ScrollToTop';
+import Error from './pages/Error/index';
 import { loader as worksLoader } from './pages/Works/index';
 import { loader as workLoader } from './pages/Work/index';
 import { loader as portraitsLoader } from './pages/Commissions/index';
@@ -14,6 +15,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const router = createBrowserRouter([
   {
     element: <ScrollToTop />,
+    errorElement: <Error />,
     children: [
       { path: '/', element: <Home /> },
       {

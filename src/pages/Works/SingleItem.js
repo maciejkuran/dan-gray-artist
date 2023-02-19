@@ -15,7 +15,7 @@ const SingleItem = ({ work }) => {
             {work.year !== 'undefined' ? `, ${work.year}` : ''}
           </h4>
           <p>
-            {work.type}, {work.size}
+            {work.type} {work.size !== 'undefined' ? work.size + '″' : ''}
           </p>
         </div>
         <button>
