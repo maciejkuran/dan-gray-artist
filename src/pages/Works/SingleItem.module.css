@@ -7,6 +7,7 @@
   align-items: center;
   cursor: pointer;
   transition: 0.5s;
+  height: 100%;
 }
 
 .single-item:hover {
