@@ -1,0 +1,9 @@
+.privacy-policy {
+  max-width: 110rem;
+  width: 100%;
+}
+
+.privacy-policy__content {
+  max-width: 60rem;
+  margin-top: 3rem;
+}

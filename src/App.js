@@ -6,6 +6,7 @@ import Commissions from './pages/Commissions/index';
 import RootLayout from './pages/RootLayout/RootLayout';
 import ScrollToTop from './components/ScrollToTop';
 import Error from './pages/Error/index';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { loader as worksLoader } from './pages/Works/index';
 import { loader as workLoader } from './pages/Work/index';
 import { loader as portraitsLoader } from './pages/Commissions/index';
@@ -37,6 +38,7 @@ const router = createBrowserRouter([
             element: <Commissions />,
             loader: portraitsLoader,
           },
+          { path: 'privacy-policy', element: <PrivacyPolicy /> },
         ],
       },
     ],
