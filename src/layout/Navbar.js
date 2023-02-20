@@ -44,11 +44,6 @@ const Navbar = () => {
     window.addEventListener('scroll', () => {
       curScrollPosition = window.pageYOffset;
 
-      //preventing bounce effect on mobile
-      if (curScrollPosition < 20) {
-        setShowNavOnScroll(true);
-      }
-
       if (curScrollPosition > prevScrollPosition) {
         setShowNavOnScroll(false);
         setMobileNavIsActive(false);
@@ -56,6 +51,9 @@ const Navbar = () => {
         setShowNavOnScroll(true);
       }
       prevScrollPosition = curScrollPosition;
+
+      //preventing bounce effect on mobile
+      if (curScrollPosition <= 100) setShowNavOnScroll(true);
     });
   }, []);
 
