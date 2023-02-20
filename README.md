@@ -1,4 +1,4 @@
-# Daniel Gray
+# Artist Daniel Gray
 
 > When you ask Dan to tell something about himself, there comes silence. He knows that words don't carry as much weight as actions. If there is some good in this world, it is Daniel. Thank you, my best friend. - <i>Maciej Kuran-Janowski</i>
 
