@@ -4,18 +4,25 @@ import { faBars } from '@fortawesome/free-solid-svg-icons';
 import classes from './Navbar.module.css';
 import CloseButton from '../components/UI/Buttons/CloseButton';
 
-import { NavLink, Link, useNavigation } from 'react-router-dom';
+import { NavLink, Link, useNavigation, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [mobileNavIsActive, setMobileNavIsActive] = useState(false);
   const [showNavOnScroll, setShowNavOnScroll] = useState(true);
   const navigation = useNavigation();
+  const { pathname } = useLocation();
 
+  //Hiding mobile nav container when path changes
+  useEffect(() => {
+    setMobileNavIsActive(false);
+  }, [pathname]);
+
+  //Setting spinner when navigating to a different route
   const spinner =
     navigation.state === 'loading' ? <span className='loader'></span> : '';
 
-  //Mobile nav
+  //Displaying and hiding mobile nav container
   const showMobileNavHandler = () => {
     setMobileNavIsActive(true);
   };

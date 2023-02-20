@@ -7,13 +7,14 @@ import { faQuoteRight } from '@fortawesome/free-solid-svg-icons';
 const Header = () => {
   return (
     <header className={classes.header}>
-      <H1Header title="ABOUT" />
+      <H1Header title='ABOUT' />
       <div className={classes['header__quote']}>
         <div>
           <p className={classes['header__quote--text']}>
-            <span className="capitalized">W</span>hen it comes to asking Dan to tell something about
-            himself, there comes silence. He knows that words don't carry as much weight as actions.
-            If there is good in this world, it is Daniel. Thank you my best friend.
+            <span className='capitalized'>W</span>hen you ask Dan to tell
+            something about himself, there comes silence. He knows that words
+            don't carry as much weight as actions. If there is some good in this
+            world, it is Daniel. Thank you, my best friend.
           </p>
           <div className={classes['header__quote__author']}>
             <p>
