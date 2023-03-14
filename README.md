@@ -15,6 +15,7 @@ In the 90s he began his adventure with painting. He specializes in a modern, abs
 - React.js
 - React Router
 - Firebase Real Time Database
+- React Testing Library & Jest (testing)
 
 ## UI
 
