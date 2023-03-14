@@ -12,7 +12,7 @@ const Work = () => {
 
   return (
     <section className={`${classes.work} default-animation`}>
-      <Link to='..' relative='path'>
+      <Link to=".." relative="path">
         <button>
           <FontAwesomeIcon icon={faArrowLeftLong} />
           BACK
@@ -22,17 +22,19 @@ const Work = () => {
         {work.title}
         {work.year !== 'undefined' ? `, ${work.year}` : ''}
       </h1>
-      <p>
+      <p data-testid="work-details">
         {work.type} {work.size !== 'undefined' ? work.size + '″' : ''}
       </p>
-      <span className={classes['work__id']}>ID: {work.id}</span>
-      <Contact title='Ask for availability and price' />
+      <span data-testid="id" className={classes['work__id']}>
+        ID: {work.id}
+      </span>
+      <Contact title="Ask for availability and price" />
       <picture>
         <img src={work.img}></img>
       </picture>
 
       <div className={classes['work__button']}>
-        <Link to='..' relative='path'>
+        <Link to=".." relative="path">
           <PrimaryButton>BACK</PrimaryButton>
         </Link>
       </div>
@@ -48,20 +50,14 @@ export const loader = async ({ request, params }) => {
   const res = await fetch(`${API_URL}/works/${id}.json`);
 
   if (!res.ok)
-    throw new Response(
-      JSON.stringify({ message: 'Problem occured while fetching data.' }),
-      {
-        status: 500,
-      }
-    );
+    throw new Response(JSON.stringify({ message: 'Problem occured while fetching data.' }), {
+      status: 500,
+    });
 
   const data = await res.json();
 
   if (data === null)
-    throw new Response(
-      JSON.stringify({ message: 'Bad request! No data found.' }),
-      { status: 400 }
-    );
+    throw new Response(JSON.stringify({ message: 'Bad request! No data found.' }), { status: 400 });
 
   return { ...data, id: id };
 };

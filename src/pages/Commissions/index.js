@@ -6,6 +6,7 @@ import { json, useLoaderData } from 'react-router-dom';
 
 const Commissions = () => {
   const data = useLoaderData();
+
   const imgs = [];
   for (const key in data) {
     imgs.push(data[key].img);
@@ -13,13 +14,13 @@ const Commissions = () => {
 
   return (
     <section className={classes['commissions']}>
-      <H1Header title='COMMISSIONS' />
-      <div className='default-animation '>
+      <H1Header title="COMMISSIONS" />
+      <div className="default-animation ">
         <p>
-          Are you excited about having your pet portrait?<br></br> Contact
-          Daniel and discuss the work details.
+          Are you excited about having your pet portrait?<br></br> Contact Daniel and discuss the
+          work details.
         </p>
-        <Contact title='Contact' />
+        <Contact title="Contact" />
         <div className={classes['commissions__grid']}>
           {imgs.map(url => (
             <div key={url}>
@@ -38,10 +39,7 @@ export const loader = async () => {
   const res = await fetch(`${API_URL}/portraits.json`);
 
   if (!res.ok)
-    return json(
-      { message: 'Problems with loading images. Please try again!' },
-      { status: 500 }
-    );
+    return json({ message: 'Problems with loading images. Please try again!' }, { status: 500 });
 
   return res;
 };

@@ -21,7 +21,7 @@ const Works = () => {
 
   return (
     <section>
-      <H1Header title='WORKS' />
+      <H1Header title="WORKS" />
       <div className={`${classes['works__grid']} default-animation`}>
         {formattedData.map(work => (
           <SingleItem key={work.id} work={work} />
@@ -37,12 +37,9 @@ export const loader = async () => {
   const res = await fetch(`${API_URL}/works.json`);
 
   if (!res.ok)
-    throw new Response(
-      JSON.stringify({ message: 'Problem occured while fetching data.' }),
-      {
-        status: 500,
-      }
-    );
+    throw new Response(JSON.stringify({ message: 'Problem occured while fetching data.' }), {
+      status: 500,
+    });
 
   return res;
 };
