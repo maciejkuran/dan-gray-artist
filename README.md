@@ -9,13 +9,13 @@ In the 90s he began his adventure with painting. He specializes in a modern, abs
 
 [👉🏻 Visit Daniel's website](https://dangray.netlify.app/)
 
-## Tools used
+## Tech Stack
 
-- Figma
-- React.js
-- React Router
-- Firebase Real Time Database
-- React Testing Library & Jest (testing)
+| Frontend     | Backend              | Design | Testing               |
+| ------------ | -------------------- | ------ | --------------------- |
+| React.js     | Firebase Realtime DB | Figma  | React Testing Library |
+| React Router |                      |        | Jest                  |
+
 
 ## UI
 
